@@ -36,6 +36,26 @@
      -->
 
     <script>
+
+        const formElem = document.querySelector('form'), 
+              inputInsideForm = formElem.querySelectorAll('input[type="text"]');
+
+        formElem.addEventListener('submit', (e) => {
+            let checkSend = 1;
+            inputInsideForm.forEach(input => {
+                if(!input.value == '') {
+                    input.style.borderColor = "";
+                } else {
+                    input.style.borderColor = "red";
+                    checkSend = 0;
+                }
+            });
+
+            if(!checkSend) {
+                e.preventDefault();
+                console.log('Form not send');
+            }
+        });
         
     </script>
 </body>

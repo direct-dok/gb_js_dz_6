@@ -17,7 +17,10 @@
     padding. -->
 
     <script>
-        
+        let divCollection = document.querySelectorAll('div');
+        divCollection.forEach(elem => {
+            elem.style.padding = '10px';
+        });
     </script>
 </body>
 </html>

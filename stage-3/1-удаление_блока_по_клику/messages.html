@@ -45,8 +45,14 @@
 
     <script>
 
+        const allBlock = document.querySelectorAll('.close');
+
+        allBlock.forEach(button => {
+            button.addEventListener('click', closeClickHandler);
+        });
+
         function closeClickHandler(event) {
-           
+           event.currentTarget.parentElement.style.display = 'none';
         }
     </script>
 </body>

@@ -9,6 +9,9 @@
         i {
             font-size: 50px;
         }
+        i:hover {
+            cursor: pointer;
+        }
         .golden {
             color: gold;
         }
@@ -31,23 +34,34 @@
     -->
 
     <script>
-        let firstStar = document.getElementById('first');
-        let secondStar = document.getElementById('second');
-        let thirdStar = document.getElementById('third');
-        let fourthStar = document.getElementById('fourth');
-        let fifthStar = document.getElementById('fifth');
+        // let firstStar = document.getElementById('first');
+        // let secondStar = document.getElementById('second');
+        // let thirdStar = document.getElementById('third');
+        // let fourthStar = document.getElementById('fourth');
+        // let fifthStar = document.getElementById('fifth');
+    
+    
+        let elemStarCollection = document.querySelectorAll('.fa-star');
 
         let goldenClass = 'golden';
 
-        firstStar.addEventListener('mouseover', function() {
-            if (!firstStar.classList.contains('goldenClass')) {
-                firstStar.classList.add(goldenClass);
+        elemStarCollection.forEach((elem, index) => {
+            elem.addEventListener('mouseover', (e) => {
+            for(let i = 0; i <= index; i++) {
+                elemStarCollection[i].classList.add(goldenClass);
             }
+            });
         });
 
-        firstStar.addEventListener('mouseout', function() {
-            firstStar.classList.remove(goldenClass);
+        elemStarCollection.forEach(elem => {
+            elem.addEventListener('mouseout', () => {
+                elemStarCollection.forEach(star => {
+                    star.classList.remove(goldenClass);
+                })
+                
+            });
         });
+
     </script>
 </body>
 </html>

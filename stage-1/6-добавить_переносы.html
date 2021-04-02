@@ -20,7 +20,11 @@
     -->
 
     <script>
-        
+        let inputField = document.querySelectorAll('input');
+
+        inputField.forEach(input => {
+            input.insertAdjacentHTML('afterend', '<br>');
+        });
     </script>
 </body>
 </html>

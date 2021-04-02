@@ -19,7 +19,12 @@
     -->
 
     <script>
-        
+        let spanElem = document.querySelector('span');
+        let inputElem = document.querySelector('input');
+
+        inputElem.addEventListener('change', (e) => {
+            spanElem.innerText = e.target.value;
+        });
     </script>
 </body>
 </html>
