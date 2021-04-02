@@ -41,6 +41,14 @@
     -->
 
     <script>
+        const allImages = document.querySelectorAll('img');
+
+        setTimeout(() => {
+            allImages.forEach((elem, index) => {
+                elem.setAttribute('src', `images/${index + 1}.jpg`);
+            });
+        }, 3000);
+
         
     </script>
 </body>

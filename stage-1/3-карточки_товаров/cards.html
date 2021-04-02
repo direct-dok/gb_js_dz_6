@@ -44,6 +44,16 @@
     -->
 
     <script>
+        let elemProductsCollection = document.querySelectorAll('.product');
+        let productName = document.querySelectorAll('.productName');
+
+        elemProductsCollection.forEach(product => {
+            product.style.backgroundColor = '#dceffa';
+        });
+
+        productName.forEach(name => {
+            name.style.cssText = 'font-size: 24px';
+        });
 
     </script>
 </body>
